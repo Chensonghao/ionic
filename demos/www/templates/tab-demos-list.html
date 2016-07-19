@@ -1,0 +1,52 @@
+<ion-view view-title="{{title}}">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-divider">
+        Thumbnails and Avatars
+      </ion-item>
+      <ion-item class="item-remove-animate item-avatar item-thumbnail-left" ng-repeat="chat in chats" type="item-text-wrap">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+      <ion-item class="item-divider">
+        Icons
+      </ion-item>
+      <ion-item class="item-icon-left">
+        <i class="icon ion-email"></i> Check Mail
+      </ion-item>
+      <ion-item class="item-icon-left item-icon-right">
+        <i class="icon ion-chatbubble-working"></i> Call me
+        <i class="icon ion-ios-telephone-outline"></i>
+      </ion-item>
+      <ion-item class="item-button-right">
+       Call me
+        <button class="button button-positive">
+          <i class="icon ion-ios-telephone"></i>
+        </button>
+      </ion-item>
+
+      <ion-item class="item-icon-left">
+        <i class="icon ion-mic-a"></i> Record album
+        <span class="item-note">Grammy</span>
+      </ion-item>
+      <ion-item class="item-icon-left">
+        <i class="icon ion-person-stalker"></i> Friends
+        <span class="badge badge-assertive">10</span>
+      </ion-item>
+      <ion-item class="item-divider">
+        Insert Lists
+      </ion-item>
+      <ion-item>
+        <ion-list class="list list-inset">
+          <ion-item>Raiders of the Lost Ark</ion-item>
+          <ion-item>Last Crusade</ion-item>
+          <ion-item>Temple of Doom</ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,18 @@
+<ion-view view-title="Demos">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-divider">
+        CSS Components
+      </ion-item>
+      <ion-item class="item-icon-right" ng-repeat="demo in demos.css" type="item-text-wrap" href="#/tab/demos/{{demo.id}}">
+        {{demo.name}}<i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <ion-item class="item-divider">
+        Javascript
+      </ion-item>
+      <ion-item class="item-icon-right" ng-repeat="demo in demos.javascript" type="item-text-wrap" href="#/tab/demos/{{demo.id}}">
+        {{demo.name}}<i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

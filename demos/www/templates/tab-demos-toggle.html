@@ -1,0 +1,20 @@
+<ion-view view-title="Toggle">
+  <ion-content>
+    <ion-list>
+      <ion-toggle ng-model="html5" toggle-class="toggle-assertive">HTML5</ion-toggle>
+      <!--原始html形式-->
+      <li class="item item-toggle">
+        CSS3
+        <label class="toggle toggle-positive">
+          <input type="checkbox" ng-model="css3">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </li>
+      <ion-toggle ng-model="javascript" toggle-class="toggle-calm">Javascript</ion-toggle>
+      <ion-toggle ng-model="angular" toggle-class="toggle-balanced">AngularJS</ion-toggle>
+      <ion-toggle ng-model="react" toggle-class="toggle-energized">ReactJS</ion-toggle>
+    </ion-list>
+  </ion-content>
+</ion-view>
