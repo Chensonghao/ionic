@@ -24,7 +24,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/tab/demos');
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -32,178 +33,183 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
   // setup an abstract state for the tabs directive
     .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
-  // Each tab has its own nav history stack:
-  .state('tab.demos', {
-    url: '/demos',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos.html',
-        controller:'DemosCtrl'
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
+    })
+    // Each tab has its own nav history stack:
+    .state('tab.demos', {
+      url: '/demos',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos.html',
+          controller: 'DemosCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-list', {
-    url: '/demos/list/:title',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-list.html',
-        controller: 'ListCtrl'
+    })
+    .state('tab.demos-list', {
+      url: '/demos/list/:title',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-list.html',
+          controller: 'ListCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-buttons', {
-    url: '/demos/buttons',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-buttons.html'
+    })
+    .state('tab.demos-buttons', {
+      url: '/demos/buttons',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-buttons.html'
+        }
       }
-    }
-  })
-  .state('tab.demos-cards', {
-    url: '/demos/cards',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-cards.html'
+    })
+    .state('tab.demos-cards', {
+      url: '/demos/cards',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-cards.html'
+        }
       }
-    }
-  })
-  .state('tab.demos-forms', {
-    url: '/demos/forms',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-forms.html'
+    })
+    .state('tab.demos-forms', {
+      url: '/demos/forms',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-forms.html'
+        }
       }
-    }
-  })
-  .state('tab.demos-toggle', {
-    url: '/demos/toggle',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-toggle.html',
-        controller:'ToggleCtrl'
+    })
+    .state('tab.demos-toggle', {
+      url: '/demos/toggle',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-toggle.html',
+          controller: 'ToggleCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-checkbox', {
-    url: '/demos/checkbox',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-checkbox.html',
-        controller:'CheckboxCtrl'
+    })
+    .state('tab.demos-checkbox', {
+      url: '/demos/checkbox',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-checkbox.html',
+          controller: 'CheckboxCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-radio', {
-    url: '/demos/radio',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-radio.html',
-        controller:'RadioCtrl'
+    })
+    .state('tab.demos-radio', {
+      url: '/demos/radio',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-radio.html',
+          controller: 'RadioCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-range', {
-    url: '/demos/range',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-range.html'
+    })
+    .state('tab.demos-range', {
+      url: '/demos/range',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-range.html'
+        }
       }
-    }
-  })
-  .state('tab.demos-select', {
-    url: '/demos/select',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-select.html'
+    })
+    .state('tab.demos-select', {
+      url: '/demos/select',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-select.html'
+        }
       }
-    }
-  })
-  .state('tab.demos-actionsheet', {
-    url: '/demos/actionsheet',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-actionsheet.html',
-        controller:'ActionSheetCtrl'
+    })
+    .state('tab.demos-actionsheet', {
+      url: '/demos/actionsheet',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-actionsheet.html',
+          controller: 'ActionSheetCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-backdrop', {
-    url: '/demos/backdrop',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-backdrop.html',
-        controller:'BackdropCtrl'
+    })
+    .state('tab.demos-backdrop', {
+      url: '/demos/backdrop',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-backdrop.html',
+          controller: 'BackdropCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-refresher', {
-    url: '/demos/refresher',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-refresher.html',
-        controller:'RefresherCtrl'
+    })
+    .state('tab.demos-refresher', {
+      url: '/demos/refresher',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-refresher.html',
+          controller: 'RefresherCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-loading', {
-    url: '/demos/loading',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-loading.html',
-        controller:'LoadingCtrl'
+    })
+    .state('tab.demos-loading', {
+      url: '/demos/loading',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-loading.html',
+          controller: 'LoadingCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-spinner', {
-    url: '/demos/spinner',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-spinner.html'
+    })
+    .state('tab.demos-spinner', {
+      url: '/demos/spinner',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-spinner.html'
+        }
       }
-    }
-  })
-  .state('tab.demos-modal', {
-    url: '/demos/modal',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-modal.html',
-        controller:'ModalCtrl'
+    })
+    .state('tab.demos-modal', {
+      url: '/demos/modal',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-modal.html',
+          controller: 'ModalCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-popover', {
-    url: '/demos/popover',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-popover.html',
-        controller:'PopoverCtrl'
+    })
+    .state('tab.demos-popover', {
+      url: '/demos/popover',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-popover.html',
+          controller: 'PopoverCtrl'
+        }
       }
-    }
-  })
-  .state('tab.demos-popup', {
-    url: '/demos/popup',
-    views: {
-      'tab-demos': {
-        templateUrl: 'templates/tab-demos-popup.html',
-        controller:'PopupCtrl'
+    })
+    .state('tab.demos-popup', {
+      url: '/demos/popup',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-popup.html',
+          controller: 'PopupCtrl'
+        }
       }
-    }
-  })
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+    })
+    .state('tab.demos-slidebox', {
+      url: '/demos/slidebox',
+      views: {
+        'tab-demos': {
+          templateUrl: 'templates/tab-demos-slidebox.html',
+          controller: 'SlideBoxCtrl'
+        }
       }
-    }
-  });
-
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/demos');
-
+    })
+    .state('tab.account', {
+      url: '/account',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/tab-account.html',
+          controller: 'AccountCtrl'
+        }
+      }
+    });
 });

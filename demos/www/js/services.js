@@ -105,6 +105,9 @@ function Demos() {
     }, {
       name: 'popup',
       id: 'popup'
+    }, {
+      name: 'slidebox',
+      id: 'slidebox'
     }]
   }
 }

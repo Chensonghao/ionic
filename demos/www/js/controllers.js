@@ -11,6 +11,8 @@ angular.module('starter.controllers', [])
   .controller('ModalCtrl', ModalCtrl)
   .controller('PopoverCtrl', PopoverCtrl)
   .controller('PopupCtrl', PopupCtrl)
+  .controller('SideMenusCtrl', SideMenusCtrl)
+  .controller('SlideBoxCtrl', SlideBoxCtrl)
   .controller('AccountCtrl', AccountCtrl);
 
 
@@ -283,6 +285,23 @@ function PopupCtrl($scope, $ionicPopup, $timeout) {
     alertPopup.then(function(res) {
       console.log('Thank you for not eating my delicious ice cream cone');
     });
+  };
+}
+
+SideMenusCtrl.$inject = ['$scope', '$ionicSideMenuDelegate'];
+
+function SideMenusCtrl($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+}
+
+SlideBoxCtrl.$inject = ['$scope'];
+
+function SlideBoxCtrl($scope) {
+  $scope.slideChanged = function(index) {
+    $scope.slideIndex = index;
+    console.log(index);
   };
 }
 
