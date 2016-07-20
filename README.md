@@ -7,7 +7,7 @@
 git clone https://github.com/chensonghao/ionic.git
 ```
 ```
-cd demos
+cd ionic/demos
 ```
 浏览器查看
 ```
