@@ -7,8 +7,10 @@
 git clone https://github.com/chensonghao/ionic.git
 ```
 ```
-cd ionic/demos
+ionic start demos
 ```
+把获取到的www目录覆盖新建项目中的www目录
+
 浏览器查看
 ```
 ionic serve
