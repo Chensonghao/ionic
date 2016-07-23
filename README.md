@@ -9,8 +9,7 @@ git clone https://github.com/chensonghao/ionic.git
 ```
 ionic start demos
 ```
-把获取到的www目录覆盖新建项目中的www目录
-
+把获取到的www目录覆盖新建项目的www目录
 浏览器查看
 ```
 ionic serve
